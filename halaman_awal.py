@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 import openpyxl
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"assets")
+ASSETS_PATH = OUTPUT_PATH / Path(r"D:\SELF ORDER MACHINE\assets")
 
 def menu_list():
     window4 = ctk.CTkToplevel()
@@ -23,7 +23,7 @@ def menu_list():
     def button_dine(path: str) -> Path:
         return ASSETS_PATH / Path(path)
 
-    button_makanan = ctk.CTkImage(Image.open(button_dine("button_makanan.png")), size=(322.38, 61.85))
+    button_makanan = ctk.CTkImage(Image.open(button_dine("button_makan.png")), size=(322.38, 61.85))
     button_4 = ctk.CTkButton(
         window4,
         image=button_makanan,
@@ -37,7 +37,7 @@ def menu_list():
     )
     button_4.place(x=-30, y=190.16)
 
-    button_minuman = ctk.CTkImage(Image.open(button_dine("button_minuman.png")), size=(322.38, 61.85))
+    button_minuman = ctk.CTkImage(Image.open(button_dine("button_minum.png")), size=(322.38, 61.85))
     button_5 = ctk.CTkButton(
         window4,
         image=button_minuman,
@@ -245,7 +245,7 @@ def dine_option():
         command=lambda: [window3.destroy(), menu_list()],
         text=''
     )
-    button_3.place(x=360.0, y=250.0)
+    button_3.place(x=310.0, y=250.0)
 
     button_image_4 = ctk.CTkImage(Image.open(button_dine("button_bungkus.png")), size=(307.36, 214.87))
     button_4 = ctk.CTkButton(
@@ -259,7 +259,7 @@ def dine_option():
         command=lambda: [window3.destroy(), menu_list()],
         text=''
     )
-    button_4.place(x=700.0, y=250.0)
+    button_4.place(x=650.0, y=250.0)
 
     window3.mainloop()
 
@@ -311,7 +311,7 @@ def halaman_nama():
         border_width=3,
         border_color=('#C7411E')
     )
-    entry_nama.place(x=240, y=300)
+    entry_nama.place(x=240, y=0)
 
     def button_nama(path: str) -> Path:
         return ASSETS_PATH / Path(path)
@@ -337,7 +337,7 @@ def halaman_nama():
 def halaman_awal():
     window = ctk.CTk()
     window.title("WARPAT!")
-    window.geometry('1366x768')
+    window.geometry('1920x1200')
     window.state('zoomed')
     window.configure(bg="#fbcd64")
     window.resizable(True, True)
@@ -349,21 +349,21 @@ def halaman_awal():
     def button_welcome(path: str) -> Path:
         return ASSETS_PATH / Path(path)
 
-    button_start_image = ctk.CTkImage(Image.open(button_welcome("button_logo.png")), size=(200, 200))
+    button_start_image = ctk.CTkImage(Image.open(button_welcome("button_logo.png")), size=(250, 250))
     button_1 = ctk.CTkButton(
         window,
         image=button_start_image,
-        width=0,
-        height=0,
-        border_width=0,
+        width=200,
+        height=200,
         corner_radius=0,
         bg_color="#fbcd64",
-        fg_color="#fbcd64",
+        fg_color="transparent",
         hover_color="#fbcd64",
         command=lambda: [window.destroy(), halaman_nama()],
+        border_width=0,
         text=''
     )
-    button_1.place(x=580.0, y=235.0)
+    button_1.place(x=515.0, y=230.0)
 
     window.mainloop()
 
